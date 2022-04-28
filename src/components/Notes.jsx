@@ -10,7 +10,7 @@ export function Notes() {
 
   return (
     <div className='blog'>
-      <h1>Where's Waldo</h1><br />
+      <h1>Notepad</h1><br />
       <div className='notesContainer'>
         {
           data.map((e, i) => {
