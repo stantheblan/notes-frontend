@@ -4,11 +4,13 @@ import Draggable from 'react-draggable'
 
 export function Notes() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getNotes()
       .then(res => setData(res.data))
-  }, [])
+      .then(() => setLoading(false))
+  }, [loading])
 
   const updatePos = (e, i) => {
     let newArr = [...data]
@@ -30,7 +32,7 @@ export function Notes() {
                 <div className='homeNote'>
                   <h2><a href={`/${e._id}`}>{e.title}</a></h2>
                   <p>{e.body}</p>
-                  {/* <p>({e.defaultPos.x},{e.defaultPos.y})</p> */}
+                  <p>({e.defaultPos.x},{e.defaultPos.y})</p>
                 </div>
               </Draggable>
             )
