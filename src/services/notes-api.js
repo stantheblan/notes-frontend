@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL = 'https://stan-notes-api.herokuapp.com/notes/'
+const URL = 'http://localhost:3001/notes/'
 
 // Get all posts
 export const getNotes = () => {
@@ -14,12 +14,8 @@ export const getNote = (id) => {
 
 // Create post
 export const createNote = (createdNote) => {
+  
   return axios.post(`${URL}`, createdNote)
-}
-
-// Create post
-export const createLocation = (created) => {
-  return axios.post(`${URL}`, created)
 }
 
 // Delete post
