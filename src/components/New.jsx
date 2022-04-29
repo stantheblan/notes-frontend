@@ -4,13 +4,17 @@ import { createNote } from '../services/notes-api'
 export function New() {
   let nav = useNavigate()
   const addNewNote = (e) => {
+    
     e.preventDefault()
     let note = {
       title: e.target.title.value,
       body: e.target.body.value,
-      x: 100,
-      y: 150
+      defaultPos: {
+        x: 100,
+        y: 150
+      }
     }
+    console.log(note)
     createNote(note)
     nav('/')
   }
