@@ -17,6 +17,11 @@ export const createNote = (createdNote) => {
   return axios.post(`${URL}`, createdNote)
 }
 
+// Create post
+export const createLocation = (created) => {
+  return axios.post(`${URL}`, created)
+}
+
 // Delete post
 export const deleteNote = (id) => {
   return axios.delete(`${URL}${id}`)
