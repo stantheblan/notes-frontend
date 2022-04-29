@@ -16,7 +16,7 @@ export function Notes() {
   }
 
   return (
-    <div className='blog'>
+    <div className='notes'>
       <h1>Notepad</h1><br />
       
         <div className='notesContainer'>
