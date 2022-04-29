@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getNotes, createLocation } from '../services/notes-api.js'
+import { getNotes, editNote} from '../services/notes-api.js'
 import Draggable from 'react-draggable'
 
 export function Notes() {
@@ -14,21 +14,23 @@ export function Notes() {
     let newArr = [...data]
     newArr[i].defaultPos = { x: e.x, y: e.y };
     setData(newArr)
-    createLocation(newArr[i])
+    // console.log(newArr[i])
+    editNote(newArr[i]._id, newArr[i])
   }
-  console.log(data)
+
+  // console.log(data)
   return (
     <div className='notes'>
       <h1>Notepad</h1><br />
-      
         <div className='notesContainer'>
         {
           data.map((e, i) => {
             return (
-              <Draggable key={i} onStop={(e, data) => updatePos(data, i)} defaultPosition={data.defaultPos}> 
+              <Draggable key={i} onStop={(e, data) => updatePos(data, i)} position={{x: e.defaultPos.x, y: e.defaultPos.y}}> 
                 <div className='homeNote'>
                   <h2><a href={`/${e._id}`}>{e.title}</a></h2>
                   <p>{e.body}</p>
+                  {/* <p>({e.defaultPos.x},{e.defaultPos.y})</p> */}
                 </div>
               </Draggable>
             )
