@@ -14,7 +14,6 @@ export const getNote = (id) => {
 
 // Create post
 export const createNote = (createdNote) => {
-  
   return axios.post(`${URL}`, createdNote)
 }
 
