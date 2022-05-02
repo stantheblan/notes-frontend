@@ -33,7 +33,6 @@ export function Notes() {
         y: genRanYPos()
       }
     }
-    console.log(note)
     createNote(note).then(()=>setLoading(false));      
     document.getElementById('title').value = "";
     document.getElementById('body').value = "";
@@ -49,7 +48,6 @@ export function Notes() {
         y: genRanYPos()
       }
     }
-    console.log(note)
     createNote(note).then(()=>setLoading(false)); 
   }
 
@@ -98,7 +96,6 @@ export function Notes() {
   }
 
   const editNotes = (id, note) => {
-    // setLoading(true);
     editNote(id, note).then(()=>window.location.reload());
 
     const feButton = document.getElementsByName('fEditButton')
@@ -106,15 +103,6 @@ export function Notes() {
     
     let eButton = document.getElementsByName('editButton')
     eButton[0].hidden = false;
-    // console.log(feButton)
-  }
-
-  const getSalami = () => {
-    // bacon.map((e, i) => {
-    //   // return(
-    //   //   // setFilms(e[i])
-    //   // )
-    // })
   }
 
   return (
