@@ -9,7 +9,7 @@ export function Notes() {
 
   useEffect(() => {
     getNotes().then(res => setData(res.data))
-    getPork().then((res) => {setBacon(res.data)}).then(console.log(bacon))
+    getPork().then((res) => {setBacon(res.data)})
   }, [loading])
 
   const updatePos = (e, i) => {
@@ -58,8 +58,14 @@ export function Notes() {
 
   const makeEditable = (id) => {
     const docNote = document.getElementById(id);
-    let eButton = document.getElementsByName('editButton')
-    eButton[0].hidden = true;
+    let eButton = document.getElementsByName(id)
+    
+    for (let i = 0; i < eButton.length; i++) {
+      if (eButton[i].name === id)
+      {
+        eButton[i].hidden = true;
+      }
+    }
 
     const pTitle = document.getElementsByClassName(id)[0];
     const pBody = document.getElementsByClassName(id)[1];
@@ -128,7 +134,7 @@ export function Notes() {
                   <p className={e._id}>{e.body}</p>
                   <p>({e.defaultPos.x},{e.defaultPos.y})</p>
                   <button type='submit' onClick = {() => {deleteNotes(e._id)}}>Delete</button>
-                  <button name='editButton' type='submit' onClick = {() => {makeEditable(e._id)}}>Edit</button>
+                  <button name={e._id} type='submit' onClick = {() => {makeEditable(e._id)}}>Edit</button>
                 </div>
               </Draggable>
             )
