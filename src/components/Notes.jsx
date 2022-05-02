@@ -114,7 +114,7 @@ export function Notes() {
     <div className='notes'>
         <div className='notesContainer'>
           <div className='formNote'>
-            <form onSubmit={addNewNote}><h1>Notepad</h1>
+            <form onSubmit={addNewNote}><h1>Bulletin Board</h1>
               Title <input type='text' id='title' name='title' />
               <br/>
               <textarea id='body' name='body' cols='40' rows='10'></textarea><br />
@@ -130,6 +130,7 @@ export function Notes() {
                 <div className='homeNote' id={e._id}>
                   
                   <h2 className={e._id}>{e.title}</h2><br/>
+                  <img src={'https://github.com/stantheblan/notes-frontend/blob/master/src/media/pushpin.png'}/>
                   <p className={e._id}>{e.body}</p>
                   <p>({e.defaultPos.x},{e.defaultPos.y})</p>
                   <button type='submit' onClick = {() => {deleteNotes(e._id)}}>Delete</button>
