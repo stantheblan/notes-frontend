@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL = 'http://localhost:3001/notes/'
+const URL = 'https://stan-notes-api.herokuapp.com/notes'
 
 const porkURL = 'https://baconipsum.com/api/?type=pork'
 
