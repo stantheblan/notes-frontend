@@ -88,7 +88,6 @@ export function Notes() {
     inputT.defaultValue = note.title;
     inputB.defaultValue = note.body;
 
-
     pTitle.replaceWith(inputT)
     pBody.replaceWith(inputB)
     docNote.appendChild(nButton)
