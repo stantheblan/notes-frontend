@@ -7,7 +7,7 @@ export default function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path='/notes-frontend' element={<Notes />}></Route>
+          <Route path='/' element={<Notes />}></Route>
         </Routes>
       </Router>
     </div>
