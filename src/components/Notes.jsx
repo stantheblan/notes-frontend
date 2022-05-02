@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
-import { getNote, getNotes, editNote, createNote, deleteNote } from '../services/notes-api.js'
+import { getNotes, editNote, createNote, deleteNote, getPork } from '../services/notes-api.js'
 import Draggable from 'react-draggable'
 
 export function Notes() {
   const [data, setData] = useState([]);
+  const [bacon, setBacon] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getNotes().then(res => setData(res.data))
+    getPork().then((res) => {setBacon(res.data)}).then(console.log(bacon))
   }, [loading])
 
   const updatePos = (e, i) => {
@@ -17,8 +19,8 @@ export function Notes() {
     editNote(newArr[i]._id, newArr[i])
   }
 
-  const genRanXPos = () => { return Math.floor(Math.random() * 1720) }  
-  const genRanYPos = () => { return Math.floor(Math.random() * 880) }
+  const genRanXPos = () => { return Math.floor(Math.random() * 1520) }  
+  const genRanYPos = () => { return Math.floor(Math.random() * 600) }
 
   const addNewNote = (e) => {
     e.preventDefault()
@@ -35,6 +37,20 @@ export function Notes() {
     createNote(note).then(()=>setLoading(false));      
     document.getElementById('title').value = "";
     document.getElementById('body').value = "";
+  }
+
+  const addNewTender = () => {
+    setLoading(true);
+    let note = {
+      title: 'Sample Note',
+      body: bacon[1],
+      defaultPos: {
+        x: genRanXPos(),
+        y: genRanYPos()
+      }
+    }
+    console.log(note)
+    createNote(note).then(()=>setLoading(false)); 
   }
 
   const deleteNotes = (id) => {
@@ -82,7 +98,8 @@ export function Notes() {
   }
 
   const editNotes = (id, note) => {
-    editNote(id, note)
+    // setLoading(true);
+    editNote(id, note).then(()=>window.location.reload());
 
     const feButton = document.getElementsByName('fEditButton')
     feButton[0].hidden = true;
@@ -90,6 +107,14 @@ export function Notes() {
     let eButton = document.getElementsByName('editButton')
     eButton[0].hidden = false;
     // console.log(feButton)
+  }
+
+  const getSalami = () => {
+    // bacon.map((e, i) => {
+    //   // return(
+    //   //   // setFilms(e[i])
+    //   // )
+    // })
   }
 
   return (
@@ -101,7 +126,9 @@ export function Notes() {
               <br/>
               <textarea id='body' name='body' cols='40' rows='10'></textarea><br />
               <input type='submit' value={'Make New'}/> 
+              
             </form>
+            <button type='submit' onClick = {addNewTender}>Fill dummy data</button>
           </div>
         {
           data.map((e, i) => {
@@ -109,10 +136,10 @@ export function Notes() {
               <Draggable key={i} onStop={(e, data) => updatePos(data, i)} position={{x: e.defaultPos.x, y: e.defaultPos.y}}> 
                 <div className='homeNote' id={e._id}>
                   
-                  <h2 className={e._id}>{e.title}</h2>
+                  <h2 className={e._id}>{e.title}</h2><br/>
                   <p className={e._id}>{e.body}</p>
                   <p>({e.defaultPos.x},{e.defaultPos.y})</p>
-                  <button type='subm it' onClick = {() => {deleteNotes(e._id)}}>Delete</button>
+                  <button type='submit' onClick = {() => {deleteNotes(e._id)}}>Delete</button>
                   <button name='editButton' type='submit' onClick = {() => {makeEditable(e._id)}}>Edit</button>
                 </div>
               </Draggable>
