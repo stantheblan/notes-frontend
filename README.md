@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+## Project Name & Pitch
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Example:
 
-## Available Scripts
+StickyStan ([Frontend](https://stickystan.herokuapp.com))
 
-In the project directory, you can run:
+Stan-notes-API ([Backend](https://stan-notes-api.herokuapp.com/notes))
 
-### `npm start`
+An application used to filter data form Twitter based on user preference, built with React, Redux, JavaScript, and CSS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Status
+This project is in continued development. Completed to meet project requirements, but much more can be done to streamline this project:
+- Authentication for user accounts
+- Timestamp notes
+- Minor edge cases
+- Make mobile frendly
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Screen Shots
 
-### `npm test`
+<img src="https://github.com/stantheblan/notes-frontend/blob/bef69cd3fcc19167888a55ff410b994a7bb49ed7/src/media/photoBoard.jpg?raw=true" alt="Empty board"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://github.com/stantheblan/notes-frontend/blob/bef69cd3fcc19167888a55ff410b994a7bb49ed7/src/media/photoNote.jpg?raw=true" alt="New Note" width="600px"/>
 
-### `npm run build`
+<img src="https://github.com/stantheblan/notes-frontend/blob/bef69cd3fcc19167888a55ff410b994a7bb49ed7/src/media/photoEdit.jpg?raw=true" alt="Edit Note" width="600px"/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://github.com/stantheblan/notes-frontend/blob/bef69cd3fcc19167888a55ff410b994a7bb49ed7/src/media/photoEdited.jpg?raw=true" alt="Edited Note" width="600px"/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation and Setup Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-### `npm run eject`
+Installation:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`npm install`  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To Start Server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`npm start`  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To Visit App:
 
-## Learn More
+`localhost:3000/notes/`  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Reflection
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This was a 1 week long project built during my third module at PerScholas' Software Development course. Project goals included using technologies learned up until this point and familiarizing myself with documentation for new features.  
 
-### Code Splitting
+Originally I wanted to build an application that allowed users to post sticky notes onto a digital bulletin board. I started this process by using the `create-react-app` boilerplate, then adding `react-draggable` and `useState/useEffect`.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+One of the main challenges I ran into was keeping the sticky note's location after page refresh. This lead me to spend a day working out how to store the (X,Y) data in the object I have in MongoDB already, so on page refresh the sticky notes would not default to (0,0). 
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+At the end of the day, the technologies implemented in this project are React, React-Router-Dom, Redux, and a significant amount of VanillaJS, JSX, and CSS. I chose to use the `create-react-app` boilerplate to minimize initial setup and invest more time toward the functionality of the project. In the next iteration I plan on integrating authentication, so users can have their own accounts and stickys.
