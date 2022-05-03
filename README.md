@@ -6,7 +6,7 @@ StickyStan ([Frontend located here](https://stickystan.herokuapp.com))
 
 Stan-notes-API ([Backend located here](https://stan-notes-api.herokuapp.com/notes))
 
-An application used to filter data form Twitter based on user preference, built with React, Redux, JavaScript, and CSS.
+A single page application used to add digital sticky notes to a digital bulletin board.
 
 ## Project Status
 This project is in continued development. Project meets requirements, but much more can be done to bolster this project:
