@@ -2,14 +2,14 @@
 
 #### Example:
 
-StickyStan ([Frontend](https://stickystan.herokuapp.com))
+StickyStan ([Frontend located here](https://stickystan.herokuapp.com))
 
-Stan-notes-API ([Backend](https://stan-notes-api.herokuapp.com/notes))
+Stan-notes-API ([Backend located here](https://stan-notes-api.herokuapp.com/notes))
 
 An application used to filter data form Twitter based on user preference, built with React, Redux, JavaScript, and CSS.
 
 ## Project Status
-This project is in continued development. Completed to meet project requirements, but much more can be done to streamline this project:
+This project is in continued development. Project meets requirements, but much more can be done to bolster this project:
 - Authentication for user accounts
 - Timestamp notes
 - Minor edge cases
