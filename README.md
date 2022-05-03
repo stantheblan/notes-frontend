@@ -42,14 +42,7 @@ To Visit App:
 
 `localhost:3000/notes/`  
 
-## Reflection
-
-  - What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
-  - What did you set out to build?
-  - Why was this project challenging and therefore a really good learning experience?
-  - What were some unexpected obstacles?
-  - What tools did you use to implement this project?
-      - This might seem obvious because you are IN this codebase, but to all other humans now is the time to talk about why you chose webpack instead of create react app, or D3, or vanilla JS instead of a framework etc. Brag about your choices and justify them here.  
+## Reflection 
 
 This was a 1 week long project built during my third module at PerScholas' Software Development course. Project goals included using technologies learned up until this point and familiarizing myself with documentation for new features.  
 
