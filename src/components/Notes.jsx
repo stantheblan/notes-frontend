@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getNotes, editNote, createNote, deleteNote, getPork } from '../services/notes-api.js'
 import Draggable from 'react-draggable'
+import push from '../media/pushpin.png'
 
 export function Notes() {
   const [data, setData] = useState([]);
@@ -128,9 +129,10 @@ export function Notes() {
             return (
               <Draggable key={i} onStop={(e, data) => updatePos(data, i)} position={{x: e.defaultPos.x, y: e.defaultPos.y}}> 
                 <div className='homeNote' id={e._id}>
-                  
-                  <h2 className={e._id}>{e.title}</h2><br/>
-                  <img src={'https://github.com/stantheblan/notes-frontend/blob/master/src/media/pushpin.png'}/>
+                  <div id='headerImg'>
+                    <h2 className={e._id}>{e.title}</h2><br/>
+                    <img src={push}/>
+                  </div>
                   <p className={e._id}>{e.body}</p>
                   <p>({e.defaultPos.x},{e.defaultPos.y})</p>
                   <button type='submit' onClick = {() => {deleteNotes(e._id)}}>Delete</button>
