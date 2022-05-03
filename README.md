@@ -48,6 +48,6 @@ This was a 1 week long project built during my third module at PerScholas' Softw
 
 Originally I wanted to build an application that allowed users to post sticky notes onto a digital bulletin board. I started this process by using the `create-react-app` boilerplate, then adding `react-draggable` and `useState/useEffect`.  
 
-One of the main challenges I ran into was keeping the sticky note's location after page refresh. This lead me to spend a day working out how to store the (X,Y) data in the object I have in MongoDB already, so on page refresh the sticky notes would not default to (0,0). 
+One of the main challenges I ran into was keeping the sticky note's location after page refresh. This led me to spend a day working out how to store the (X,Y) data in the object I have in MongoDB already, so on page refresh the sticky notes would not default to (0,0). 
 
 At the end of the day, the technologies implemented in this project are React, React-Router-Dom, MongoDB, HerokuApps, and a significant amount of VanillaJS, JSX, and CSS. I chose to use the `create-react-app` boilerplate to minimize initial setup and invest more time toward the functionality of the project. In the next iteration I plan on integrating authentication, so users can have their own accounts and stickys.
